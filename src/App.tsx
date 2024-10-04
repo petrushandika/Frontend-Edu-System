@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Schedule from "./pages/Schedule/Schedule";
+import Subjects from "./pages/Subjects/Subjects";
+import Lecturers from "./pages/Lecturers/Lecturers";
+import Students from "./pages/Students/Students";
+import Announcement from "./pages/Announcement/Announcement";
+import Profile from "./pages/Profile/Profile";
+import Assignments from "./pages/Assignments/Assignments";
+import Regular from "./pages/Students/components/Regular";
+import Extension from "./pages/Students/components/Extension";
+import Repeating from "./pages/Students/components/Repeating";
+import Transferred from "./pages/Students/components/Transferred";
+import Main from "./pages/Assignments/components/Main";
+import Final from "./pages/Assignments/components/Final";
+import { Upload } from "lucide-react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/schedule" element={<Schedule />} />
+      <Route path="/subjects" element={<Subjects />} />
+      <Route path="/lecturers" element={<Lecturers />} />
+
+      <Route path="/students" element={<Students />}>
+        <Route path="regular" element={<Regular />} />
+        <Route path="extension" element={<Extension />} />
+        <Route path="repeating" element={<Repeating />} />
+        <Route path="transferred" element={<Transferred />} />
+      </Route>
+
+      <Route path="/assignments" element={<Assignments />}>
+        <Route path="main" element={<Main />} />
+        <Route path="final" element={<Final />} />
+        <Route path="upload" element={<Upload />} />
+      </Route>
+
+      <Route path="/announcements" element={<Announcement />} />
+      <Route path="/profile" element={<Profile />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
