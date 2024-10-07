@@ -1,0 +1,65 @@
+[
+  {
+    "Hari": "Senin",
+    "Mata Kuliah": "Interaksi Manusia & Komputer*/**",
+    "Waktu": "18.30 - 21.30",
+    "Ruang": "D631",
+    "Dosen": "TRI AGUS RIYADI"
+  },
+  {
+    "Hari": "Selasa",
+    "Mata Kuliah": "Jejaring Sosial & Konten Kreatif",
+    "Waktu": "18.30 - 20.30",
+    "Ruang": "D632",
+    "Dosen": "ERVAN CATUR ANGKOSO"
+  },
+  {
+    "Hari": "Rabu",
+    "Mata Kuliah": "Sistem Keamanan Tek. Informasi *",
+    "Waktu": "18.30 - 21.30",
+    "Ruang": "D633",
+    "Dosen": "DONIE MARGAVIANTO NURROKHMAN"
+  },
+  {
+    "Hari": "Kamis",
+    "Mata Kuliah": "Konsep Data Mining",
+    "Waktu": "17.30 - 19.30",
+    "Ruang": "D632",
+    "Dosen": "IHSAN JATNIKA"
+  },
+  {
+    "Hari": "Kamis",
+    "Mata Kuliah": "Pemrograman Berbasis Web **",
+    "Waktu": "19.30 - 21.30",
+    "Ruang": "D632",
+    "Dosen": "ERVAN CATUR ANGKOSO"
+  },
+  {
+    "Hari": "Jumat",
+    "Mata Kuliah": "Statistika **",
+    "Waktu": "17.30 - 21.30",
+    "Ruang": "D636",
+    "Dosen": "THOMAS WIDODO"
+  },
+  {
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Bahasa Indonesia 2",
+    "Waktu": "09.30 - 11.30",
+    "Ruang": "E444",
+    "Dosen": "MARGARETHA SUMARWATI"
+  },
+  {
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Metode Penelitian",
+    "Waktu": "11.30 - 13.30",
+    "Ruang": "E444",
+    "Dosen": "RIRIN YULIYANTI"
+  },
+  {
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Graf & Analisis Algoritma",
+    "Waktu": "14.30 - 17.30",
+    "Ruang": "E444",
+    "Dosen": "WINARTI DWI ASTUTI"
+  }
+]

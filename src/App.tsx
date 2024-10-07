@@ -13,31 +13,35 @@ import Repeating from "./pages/Students/components/Repeating";
 import Transferred from "./pages/Students/components/Transferred";
 import Main from "./pages/Assignments/components/Main";
 import Final from "./pages/Assignments/components/Final";
-import { Upload } from "lucide-react";
+import Upload from "./pages/Assignments/components/Upload";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/schedule" element={<Schedule />} />
-      <Route path="/subjects" element={<Subjects />} />
-      <Route path="/lecturers" element={<Lecturers />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
 
-      <Route path="/students" element={<Students />}>
-        <Route path="regular" element={<Regular />} />
-        <Route path="extension" element={<Extension />} />
-        <Route path="repeating" element={<Repeating />} />
-        <Route path="transferred" element={<Transferred />} />
+        <Route path="schedule" element={<Schedule />} />
+        <Route path="subjects" element={<Subjects />} />
+        <Route path="lecturers" element={<Lecturers />} />
+
+        <Route path="students" element={<Students />}>
+          <Route path="regular" element={<Regular />} />
+          <Route path="extension" element={<Extension />} />
+          <Route path="repeating" element={<Repeating />} />
+          <Route path="transferred" element={<Transferred />} />
+        </Route>
+
+        <Route path="assignments" element={<Assignments />}>
+          <Route path="main" element={<Main />} />
+          <Route path="final" element={<Final />} />
+          <Route path="upload" element={<Upload />} />
+        </Route>
+
+        <Route path="announcements" element={<Announcement />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
-
-      <Route path="/assignments" element={<Assignments />}>
-        <Route path="main" element={<Main />} />
-        <Route path="final" element={<Final />} />
-        <Route path="upload" element={<Upload />} />
-      </Route>
-
-      <Route path="/announcements" element={<Announcement />} />
-      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
