@@ -17,19 +17,18 @@ import {
     GridReadyEvent,
     ModuleRegistry,
 } from "@ag-grid-community/core";
-import { IScheduleData } from "../../types/IScheduleData";
-import { Input } from "@/components/ui/input";
-import { IoSearchOutline } from "react-icons/io5";
+import { IScheduleData } from "../../../types/IScheduleData";
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
-function Lecturers() {
+function ScheduleTable() {
     const [rowData, setRowData] = useState<IScheduleData[]>([]);
     const [columnDefs] = useState<ColDef[]>([
-        { field: "No", minWidth: 100, flex: 1 },
-        { field: "Nama", minWidth: 100, flex: 1 },
+        { field: "Hari", minWidth: 100, flex: 1 },
         { field: "Mata Kuliah", minWidth: 250, flex: 1 },
-        { field: "Kontak", minWidth: 100, flex: 1 },
+        { field: "Waktu", minWidth: 100, flex: 1 },
+        { field: "Ruang", minWidth: 100, flex: 1 },
+        { field: "Dosen", minWidth: 250, flex: 1 },
     ]);
 
     const defaultColDef = useMemo<ColDef>(() => ({
@@ -40,17 +39,13 @@ function Lecturers() {
 
     const onGridReady = useCallback((params: GridReadyEvent) => {
         console.log(params);
-        fetch("/src/data/lecturers.json")
+        fetch("/src/data/ScheduleTable.json")
             .then((resp) => resp.json())
             .then((data: IScheduleData[]) => setRowData(data));
     }, []);
 
     return (
-        <div style={{ width: "100%", height: "auto" }} className="flex flex-col gap-3">
-            <div className="relative">
-                <Input type="text" placeholder="Search..." className="pl-10" />
-                <IoSearchOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 rounded" />
-            </div>
+        <div style={{ width: "100%", height: "auto" }}>
             <div className="ag-theme-quartz text-xs sm:text-xs">
                 <AgGridReact<IScheduleData>
                     rowData={rowData}
@@ -67,8 +62,8 @@ function Lecturers() {
 const root = createRoot(document.getElementById("root")!);
 root.render(
     <StrictMode>
-        <Lecturers />
+        <ScheduleTable />
     </StrictMode>,
 );
 
-export default Lecturers;
+export default ScheduleTable;

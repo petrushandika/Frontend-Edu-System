@@ -24,6 +24,7 @@ function App() {
 
         <Route path="schedule" element={<Schedule />} />
         <Route path="subjects" element={<Subjects />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<Subjects />} />
         <Route path="lecturers" element={<Lecturers />} />
 
         <Route path="students" element={<Students />}>

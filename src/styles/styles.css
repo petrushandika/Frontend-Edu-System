@@ -9,3 +9,64 @@
   /* Changes the hover color of the row*/
   --ag-row-hover-color: rgb(225, 225, 225);
 }
+
+.flex-col.space-y-2.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flex-col.space-y-2.overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.flex-col.space-y-2.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.flex-col.space-y-2.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dropdown {
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdown.open {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scrollable-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.scrollable-dropdown.open {
+  max-height: 300px;
+  overflow-y: auto;
+}
