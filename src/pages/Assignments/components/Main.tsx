@@ -1,6 +1,12 @@
+import AssignmentCard from "./AssignmentCard"
+
 function Main() {
     return (
-        <div>Main</div>
+        <div className="w-full flex items-center justify-center">
+            <AssignmentCard
+                text="Upload Tugas"
+            />
+        </div>
     )
 }
 
