@@ -1,6 +1,6 @@
 // "use strict";
 
-import LecturerCard from "./components/LecturerCard"
+import LecturerTable from "./components/LecturerTable"
 
 // import {
 //     useCallback,
@@ -78,7 +78,7 @@ import LecturerCard from "./components/LecturerCard"
 function Lecturers() {
     return (
         <div>
-            <LecturerCard />
+            <LecturerTable />
         </div>
     )
 }
