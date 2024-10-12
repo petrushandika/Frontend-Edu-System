@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
-
-interface Lecturer {
-    name: string;
-    course: string;
-    email: string;
-    whatsapp: string;
-}
+import ILecturerData from '@/types/ILecturerData';
 
 function LecturerTable() {
-    const [lecturers, setLecturers] = useState<Lecturer[]>([]);
+    const [lecturers, setLecturers] = useState<ILecturerData[]>([]);
     const [search, setSearch] = useState('');
     const [pageSize, setPageSize] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +12,7 @@ function LecturerTable() {
             try {
                 const response = await fetch('/src/data/lecturers.json');
                 const data = await response.json();
-                const formattedData: Lecturer[] = data.map((item: any) => ({
+                const formattedData: ILecturerData[] = data.map((item: any) => ({
                     name: item.Nama,
                     course: item['Mata Kuliah'],
                     email: item.Kontak.Email,

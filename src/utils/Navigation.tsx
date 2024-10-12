@@ -9,6 +9,11 @@ function Navigation({ onLinkClick }: any) {
         setDropdownOpen((prev) => !prev);
     };
 
+    const handleLinkClick = () => {
+        setDropdownOpen(false); // Close dropdown for sub-items
+        onLinkClick();
+    };
+
     return (
         <div className="flex flex-col w-full h-full mx-2 p-4 bg-white border-r">
             <div className="flex-col space-y-2 mt-12 md:mt-0 lg:mt-0">
@@ -30,10 +35,7 @@ function Navigation({ onLinkClick }: any) {
 
                 <button
                     className="w-full text-left block p-2 text-sm font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                    onClick={() => {
-                        toggleDropdown();
-                        onLinkClick();
-                    }}
+                    onClick={toggleDropdown} // Toggle dropdown without closing
                 >
                     Mata Kuliah
                 </button>
@@ -43,63 +45,63 @@ function Navigation({ onLinkClick }: any) {
                         <Link
                             to="/subjects/interaksi-manusia-dan-komputer"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick} // Close dropdown and execute onLinkClick
                         >
                             • Interaksi Manusia & Komputer
                         </Link>
                         <Link
                             to="/subjects/jejaring-sosial-dan-konten-kreatif"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Jejaring Sosial & Konten Kreatif
                         </Link>
                         <Link
                             to="/subjects/sistem-keamanan-teknologi-informasi"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Sistem Keamanan Tek. Informasi
                         </Link>
                         <Link
                             to="/subjects/konsep-data-mining"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Konsep Data Mining
                         </Link>
                         <Link
                             to="/subjects/pemrograman-berbasis-web"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Pemrograman Berbasis Web
                         </Link>
                         <Link
                             to="/subjects/statistika"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Statistika
                         </Link>
                         <Link
                             to="/subjects/bahasa-indonesia-2"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Bahasa Indonesia 2
                         </Link>
                         <Link
                             to="/subjects/metode-penelitian"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Metode Penelitian
                         </Link>
                         <Link
                             to="/subjects/graf-dan-analisis-algoritma"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={onLinkClick}
+                            onClick={handleLinkClick}
                         >
                             • Graf & Analisis Algoritma
                         </Link>
