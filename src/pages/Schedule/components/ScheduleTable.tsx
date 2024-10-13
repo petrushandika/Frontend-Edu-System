@@ -17,7 +17,7 @@ import {
     GridReadyEvent,
     ModuleRegistry,
 } from "@ag-grid-community/core";
-import { IScheduleData } from "../../../types/IScheduleData";
+import IScheduleData from "@/types/IScheduleData";
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 

@@ -7,7 +7,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { ITableData } from "@/types/ITableData";
+import ITableData from "@/types/ITableData";
 
 function Table({ caption, columns, data }: ITableData) {
     return (
