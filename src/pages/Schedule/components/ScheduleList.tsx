@@ -6,18 +6,26 @@ function ScheduleList() {
     const [schedule, setSchedule] = useState<IScheduleCard[]>([]);
 
     useEffect(() => {
-        const fetchSchedule = async () => {
+        async function fetchSchedule() {
             try {
                 const response = await fetch('/src/data/schedule.json');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data: IScheduleCard[] = await response.json();
-                setSchedule(data);
+                const data = await response.json();
+
+                const formattedData: IScheduleCard[] = data.map((item: any) => ({
+                    day: item.Hari,
+                    instructor: item.Dosen,
+                    class: item.Kelas,
+                    time: item.Waktu,
+                    description: item.Deskripsi,
+                    imageUrl: item.Image,
+                    course: item['Mata Kuliah'].split(',').map((course: string) => course.trim()),
+                }));
+
+                setSchedule(formattedData);
             } catch (error) {
                 console.error("Error fetching the schedule data: ", error);
             }
-        };
+        }
 
         fetchSchedule();
     }, []);
@@ -27,10 +35,10 @@ function ScheduleList() {
             {schedule.map((item, index) => (
                 <ScheduleCard
                     key={index}
-                    title={item.title}
+                    course={item.course}
                     description={item.description}
                     imageUrl={item.imageUrl}
-                    code={item.code}
+                    class={item.class}
                     instructor={item.instructor}
                     time={item.time}
                     day={item.day}

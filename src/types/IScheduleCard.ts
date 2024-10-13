@@ -1,8 +1,8 @@
 export default interface IScheduleCard {
-  title: string;
+  course: string;
   description: string;
   imageUrl: string;
-  code: string;
+  class: string;
   instructor: string;
   time: string;
   day: string;

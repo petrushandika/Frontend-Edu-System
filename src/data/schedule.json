@@ -1,83 +1,83 @@
 [
   {
-    "day": "Senin",
-    "title": "Interaksi Manusia & Komputer*/**",
-    "time": "18.30 - 21.30",
-    "code": "D631",
-    "instructor": "TRI AGUS RIYADI",
-    "description": "Mata kuliah ini membahas tentang interaksi antara manusia dan komputer, termasuk desain antarmuka pengguna, konsep usability, dan user experience untuk meningkatkan interaksi dengan sistem.",
-    "imageUrl": "https://img.freepik.com/free-vector/online-assistant-user-help-frequently-asked-questions-call-center-worker-cartoon-character-woman-working-hotline_335657-2336.jpg?t=st=1728787474~exp=1728791074~hmac=63eb60559b857bd09d31d431665259ba575c9520a23d91c5eca71b1bd4e40d97&w=740"
+    "Hari": "Senin",
+    "Mata Kuliah": "Interaksi Manusia & Komputer*/**",
+    "Waktu": "18.30 - 21.30",
+    "Kelas": "D631",
+    "Dosen": "TRI AGUS RIYADI",
+    "Deskripsi": "Mata kuliah ini membahas tentang interaksi antara manusia dan komputer, termasuk desain antarmuka pengguna, konsep usability, dan user experience untuk meningkatkan interaksi dengan sistem.",
+    "Image": "https://img.freepik.com/free-vector/online-assistant-user-help-frequently-asked-questions-call-center-worker-cartoon-character-woman-working-hotline_335657-2336.jpg?t=st=1728787474~exp=1728791074~hmac=63eb60559b857bd09d31d431665259ba575c9520a23d91c5eca71b1bd4e40d97&w=740"
   },
   {
-    "day": "Selasa",
-    "title": "Jejaring Sosial & Konten Kreatif",
-    "time": "18.30 - 20.30",
-    "code": "D632",
-    "instructor": "ERVAN CATUR ANGKOSO",
-    "description": "Mata kuliah ini mengeksplorasi cara kerja jejaring sosial serta memanfaatkan platform digital untuk menghasilkan konten kreatif yang efektif.",
-    "imageUrl": "https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?t=st=1728787570~exp=1728791170~hmac=74861303b743a611908e46c5c81ee0b8cbf065e57b8668ca4047dfbefa7d17c0&w=740"
+    "Hari": "Selasa",
+    "Mata Kuliah": "Jejaring Sosial & Konten Kreatif",
+    "Waktu": "18.30 - 20.30",
+    "Kelas": "D632",
+    "Dosen": "ERVAN CATUR ANGKOSO",
+    "Deskripsi": "Mata kuliah ini mengeksplorasi cara kerja jejaring sosial serta memanfaatkan platform digital untuk menghasilkan konten kreatif yang efektif.",
+    "Image": "https://img.freepik.com/free-vector/chatbot-customer-service-abstract-concept_335657-3037.jpg?t=st=1728787570~exp=1728791170~hmac=74861303b743a611908e46c5c81ee0b8cbf065e57b8668ca4047dfbefa7d17c0&w=740"
   },
   {
-    "day": "Rabu",
-    "title": "Sistem Keamanan Tek. Informasi *",
-    "time": "18.30 - 21.30",
-    "code": "D633",
-    "instructor": "DONIE MARGAVIANTO NURROKHMAN",
-    "description": "Mata kuliah ini berfokus pada keamanan sistem informasi, mencakup teknik dan alat untuk melindungi data dan infrastruktur teknologi dari ancaman dan serangan.",
-    "imageUrl": "https://img.freepik.com/free-vector/cloud-computing-security-abstract-concept-illustration_335657-2105.jpg?t=st=1728787598~exp=1728791198~hmac=3ce926e1264cecaba98f25e5ec45912d258a27fb5eacee126abaad319196e632&w=740"
+    "Hari": "Rabu",
+    "Mata Kuliah": "Sistem Keamanan Tek. Informasi *",
+    "Waktu": "18.30 - 21.30",
+    "Kelas": "D633",
+    "Dosen": "DONIE MARGAVIANTO NURROKHMAN",
+    "Deskripsi": "Mata kuliah ini berfokus pada keamanan sistem informasi, mencakup teknik dan alat untuk melindungi data dan infrastruktur teknologi dari ancaman dan serangan.",
+    "Image": "https://img.freepik.com/free-vector/cloud-computing-security-abstract-concept-illustration_335657-2105.jpg?t=st=1728787598~exp=1728791198~hmac=3ce926e1264cecaba98f25e5ec45912d258a27fb5eacee126abaad319196e632&w=740"
   },
   {
-    "day": "Kamis",
-    "title": "Konsep Data Mining",
-    "time": "17.30 - 19.30",
-    "code": "D632",
-    "instructor": "IHSAN JATNIKA",
-    "description": "Mata kuliah ini memperkenalkan konsep dan teknik dalam data mining, termasuk cara mengidentifikasi pola dalam data besar untuk membuat keputusan yang lebih baik.",
-    "imageUrl": "https://img.freepik.com/free-vector/staff-management-perspective-definition-target-orientation-teamwork-organization-business-coach-company-executive-personnel-cartoon-characters_335657-2967.jpg?t=st=1728787772~exp=1728791372~hmac=a235a500b450738174c913e8ee170f2570f17c81b4befa47528cc1041fac4eb7&w=740"
+    "Hari": "Kamis",
+    "Mata Kuliah": "Konsep Data Mining",
+    "Waktu": "17.30 - 19.30",
+    "Kelas": "D632",
+    "Dosen": "IHSAN JATNIKA",
+    "Deskripsi": "Mata kuliah ini memperkenalkan konsep dan teknik dalam data mining, termasuk cara mengidentifikasi pola dalam data besar untuk membuat keputusan yang lebih baik.",
+    "Image": "https://img.freepik.com/free-vector/staff-management-perspective-definition-target-orientation-teamwork-organization-business-coach-company-executive-personnel-cartoon-characters_335657-2967.jpg?t=st=1728787772~exp=1728791372~hmac=a235a500b450738174c913e8ee170f2570f17c81b4befa47528cc1041fac4eb7&w=740"
   },
   {
-    "day": "Kamis",
-    "title": "Pemrograman Berbasis Web **",
-    "time": "19.30 - 21.30",
-    "code": "D632",
-    "instructor": "ERVAN CATUR ANGKOSO",
-    "description": "Mata kuliah ini mengajarkan dasar-dasar pemrograman web, meliputi teknologi front-end dan back-end untuk membangun aplikasi web dinamis.",
-    "imageUrl": "https://img.freepik.com/free-vector/devops-team-abstract-concept-vector-illustration-software-development-team-member-agile-workflow-devops-team-model-it-teamwork-project-management-integrated-practice-abstract-metaphor_335657-2299.jpg?t=st=1728787686~exp=1728791286~hmac=5a150c955e2fdf19b1c593f738602c00619d8eea58e076b4f80036a180ea47a4&w=740"
+    "Hari": "Kamis",
+    "Mata Kuliah": "Pemrograman Berbasis Web **",
+    "Waktu": "19.30 - 21.30",
+    "Kelas": "D632",
+    "Dosen": "ERVAN CATUR ANGKOSO",
+    "Deskripsi": "Mata kuliah ini mengajarkan dasar-dasar pemrograman web, meliputi teknologi front-end dan back-end untuk membangun aplikasi web dinamis.",
+    "Image": "https://img.freepik.com/free-vector/devops-team-abstract-concept-vector-illustration-software-development-team-member-agile-workflow-devops-team-model-it-teamwork-project-management-integrated-practice-abstract-metaphor_335657-2299.jpg?t=st=1728787686~exp=1728791286~hmac=5a150c955e2fdf19b1c593f738602c00619d8eea58e076b4f80036a180ea47a4&w=740"
   },
   {
-    "day": "Jumat",
-    "title": "Statistika **",
-    "time": "17.30 - 21.30",
-    "code": "D636",
-    "instructor": "THOMAS WIDODO",
-    "description": "Mata kuliah ini membahas konsep dasar statistika, analisis data, dan penerapan statistika dalam berbagai disiplin ilmu untuk pengambilan keputusan berbasis data.",
-    "imageUrl": "https://img.freepik.com/free-vector/social-media-data-center-smm-stats-digital-marketing-research-market-trends-analysis-female-expert-studying-online-survey-results_335657-2392.jpg?t=st=1728787660~exp=1728791260~hmac=c068df3586fa30d81296fe016098aeff0b77612817a7a2fd2fe4d57befaf739d&w=740"
+    "Hari": "Jumat",
+    "Mata Kuliah": "Statistika **",
+    "Waktu": "17.30 - 21.30",
+    "Kelas": "D636",
+    "Dosen": "THOMAS WIDODO",
+    "Deskripsi": "Mata kuliah ini membahas konsep dasar statistika, analisis data, dan penerapan statistika dalam berbagai disiplin ilmu untuk pengambilan keputusan berbasis data.",
+    "Image": "https://img.freepik.com/free-vector/social-media-data-center-smm-stats-digital-marketing-research-market-trends-analysis-female-expert-studying-online-survey-results_335657-2392.jpg?t=st=1728787660~exp=1728791260~hmac=c068df3586fa30d81296fe016098aeff0b77612817a7a2fd2fe4d57befaf739d&w=740"
   },
   {
-    "day": "Sabtu",
-    "title": "Bahasa Indonesia 2",
-    "time": "09.30 - 11.30",
-    "code": "E444",
-    "instructor": "MARGARETHA SUMARWATI",
-    "description": "Mata kuliah ini mengajarkan penggunaan Bahasa Indonesia secara baik dan benar dalam konteks akademik serta meningkatkan keterampilan berbahasa tulis dan lisan.",
-    "imageUrl": "https://img.freepik.com/free-vector/social-development-abstract-concept-vector-illustration-children-learn-social-skills-competence-positive-impact-successful-communication-career-success-education-abstract-metaphor_335657-1426.jpg?t=st=1728787813~exp=1728791413~hmac=f222a20690fd262c7dee2c33c398abe0244daee85c1e8ed17c07c43d2d499656&w=740"
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Bahasa Indonesia 2",
+    "Waktu": "09.30 - 11.30",
+    "Kelas": "E444",
+    "Dosen": "MARGARETHA SUMARWATI",
+    "Deskripsi": "Mata kuliah ini mengajarkan penggunaan Bahasa Indonesia secara baik dan benar dalam konteks akademik serta meningkatkan keterampilan berbahasa tulis dan lisan.",
+    "Image": "https://img.freepik.com/free-vector/social-development-abstract-concept-vector-illustration-children-learn-social-skills-competence-positive-impact-successful-communication-career-success-education-abstract-metaphor_335657-1426.jpg?t=st=1728787813~exp=1728791413~hmac=f222a20690fd262c7dee2c33c398abe0244daee85c1e8ed17c07c43d2d499656&w=740"
   },
   {
-    "day": "Sabtu",
-    "title": "Metode Penelitian",
-    "time": "11.30 - 13.30",
-    "code": "E444",
-    "instructor": "RIRIN YULIYANTI",
-    "description": "Mata kuliah ini memberikan dasar-dasar metode penelitian ilmiah, termasuk perancangan penelitian, pengumpulan data, analisis, dan penyusunan laporan penelitian.",
-    "imageUrl": "https://img.freepik.com/free-vector/employees-cv-candidates-resume-corporate-workers-students-id-isolate-flat-design-element-job-applications-avatars-personal-information-concept-illustration_335657-1661.jpg?t=st=1728789997~exp=1728793597~hmac=b8af59ba821f2176da22176abd9a8989bb15d7264052783349899a2fd3dfa4a6&w=740"
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Metode Penelitian",
+    "Waktu": "11.30 - 13.30",
+    "Kelas": "E444",
+    "Dosen": "RIRIN YULIYANTI",
+    "Deskripsi": "Mata kuliah ini memberikan dasar-dasar metode penelitian ilmiah, termasuk perancangan penelitian, pengumpulan data, analisis, dan penyusunan laporan penelitian.",
+    "Image": "https://img.freepik.com/free-vector/employees-cv-candidates-resume-corporate-workers-students-id-isolate-flat-design-element-job-applications-avatars-personal-information-concept-illustration_335657-1661.jpg?t=st=1728789997~exp=1728793597~hmac=b8af59ba821f2176da22176abd9a8989bb15d7264052783349899a2fd3dfa4a6&w=740"
   },
   {
-    "day": "Sabtu",
-    "title": "Graf & Analisis Algoritma",
-    "time": "14.30 - 17.30",
-    "code": "E444",
-    "instructor": "WINARTI DWI ASTUTI",
-    "description": "Mata kuliah ini berfokus pada teori graf dan analisis algoritma, termasuk bagaimana algoritma diterapkan untuk memecahkan masalah kompleks dalam komputasi.",
-    "imageUrl": "https://img.freepik.com/free-vector/statistical-analysis-man-cartoon-character-with-magnifying-glass-analyzing-data-circular-diagram-with-colorful-segments-statistics-audit-research-concept-illustration_335657-2063.jpg?t=st=1728787640~exp=1728791240~hmac=07a2d01802a45ae2a4c96ccfaa88f7e67c82543e12e20291ad2c8362244dbcd5&w=740"
+    "Hari": "Sabtu",
+    "Mata Kuliah": "Graf & Analisis Algoritma",
+    "Waktu": "14.30 - 17.30",
+    "Kelas": "E444",
+    "Dosen": "WINARTI DWI ASTUTI",
+    "Deskripsi": "Mata kuliah ini berfokus pada teori graf dan analisis algoritma, termasuk bagaimana algoritma diterapkan untuk memecahkan masalah kompleks dalam komputasi.",
+    "Image": "https://img.freepik.com/free-vector/statistical-analysis-man-cartoon-character-with-magnifying-glass-analyzing-data-circular-diagram-with-colorful-segments-statistics-audit-research-concept-illustration_335657-2063.jpg?t=st=1728787640~exp=1728791240~hmac=07a2d01802a45ae2a4c96ccfaa88f7e67c82543e12e20291ad2c8362244dbcd5&w=740"
   }
 ]

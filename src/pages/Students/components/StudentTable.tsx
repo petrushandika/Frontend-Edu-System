@@ -15,7 +15,7 @@ function StudentTable() {
                 const formattedData: IStudentData[] = data.map((item: any) => ({
                     name: item['Nama Lengkap'],
                     npm: item.NPM,
-                    class: item.class,
+                    class: item.Kelas,
                     course: item['Mata Kuliah'].split(',').map((course: string) => course.trim()),
                 }));
                 setLecturers(formattedData);
@@ -75,7 +75,7 @@ function StudentTable() {
                         <tr>
                             <th className="border px-4 py-2">Nama Lengkap</th>
                             <th className="border px-4 py-2">NPM</th>
-                            <th className="border px-4 py-2">class</th>
+                            <th className="border px-4 py-2">Kelas</th>
                             <th className="border px-4 py-2">Mata Kuliah</th>
                         </tr>
                     </thead>
@@ -105,7 +105,7 @@ function StudentTable() {
                         <div key={index} className="border p-4 mb-2 rounded-md bg-white">
                             <p className="font-semibold text-lg">{item.name}</p>
                             <p><span className="font-semibold">NPM:</span> {item.npm}</p>
-                            <p><span className="font-semibold">class:</span> {item.class}</p>
+                            <p><span className="font-semibold">Kelas:</span> {item.class}</p>
                             <div>
                                 {item.course.map((course, idx) => (
                                     <span
