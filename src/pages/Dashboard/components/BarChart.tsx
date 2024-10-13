@@ -19,11 +19,11 @@ import {
 export const description = "A bar chart with an active bar";
 
 const chartData = [
-    { browser: "chrome", visitors: 187, fill: "var(--color-chrome)" },
-    { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-    { browser: "firefox", visitors: 275, fill: "var(--color-firefox)" },
-    { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-    { browser: "other", visitors: 90, fill: "var(--color-other)" },
+    { browser: "Regular", visitors: 187, fill: "var(--color-chrome)" },
+    { browser: "Ekstensi", visitors: 200, fill: "var(--color-safari)" },
+    { browser: "Pengulangan", visitors: 275, fill: "var(--color-firefox)" },
+    { browser: "Transfer", visitors: 173, fill: "var(--color-edge)" },
+    { browser: "Lainnya", visitors: 90, fill: "var(--color-other)" },
 ];
 
 const chartConfig = {
@@ -57,7 +57,7 @@ function BarChart() {
         <div>
             <Card className="flex flex-col">
                 <CardHeader className="items-center pb-0">
-                    <CardTitle>Bar Chart - Active</CardTitle>
+                    <CardTitle>Kelas Mahasiswa</CardTitle>
                     <CardDescription>January - June 2024</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 pb-0">

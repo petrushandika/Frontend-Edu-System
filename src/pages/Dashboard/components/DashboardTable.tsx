@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
     Table as UITable,
     TableBody,
@@ -9,30 +10,58 @@ import {
 } from "@/components/ui/table";
 import ITableData from "@/types/ITableData";
 
-function Table({ caption, columns, data }: ITableData) {
+function DashboardTable({ caption }: { caption: string }) {
+    const [data, setData] = useState<ITableData[]>([]);
+    const columns = ["Nama", "NPM", "Status", "Informasi"];
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("/src/data/students.json");
+                const result = await response.json();
+
+                const formattedData: ITableData[] = result.map((item: any) => ({
+                    name: item['Nama Lengkap'],
+                    npm: item.NPM,
+                    status: item.Status,
+                    informasi: item.Informasi,
+                }));
+
+                setData(formattedData);
+            } catch (error) {
+                console.error("Error fetching the data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
-        <div>
-            <UITable>
+        <div className="max-h-[300px] overflow-y-auto relative">
+            <UITable className="min-w-full">
                 <TableCaption>{caption}</TableCaption>
                 <TableHeader>
-                    <TableRow>
+                    <TableRow className="bg-gray-200 sticky top-0 z-10">
                         {columns.map((column, index) => (
-                            <TableHead key={index}>{column}</TableHead>
+                            <TableHead key={index}>
+                                {column}
+                            </TableHead>
                         ))}
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {data.map((row, index) => (
-                        <TableRow key={index}>
-                            {row.map((cell, cellIndex) => (
-                                <TableCell key={cellIndex}>{cell}</TableCell>
-                            ))}
+                        <TableRow key={index} className="hover:bg-gray-100">
+                            <TableCell>{row.name}</TableCell>
+                            <TableCell>{row.npm}</TableCell>
+                            <TableCell>{row.status}</TableCell>
+                            <TableCell>{row.informasi}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
             </UITable>
         </div>
-    )
+    );
 }
 
-export default Table;
+export default DashboardTable;

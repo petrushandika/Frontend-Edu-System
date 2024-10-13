@@ -1,5 +1,6 @@
 export default interface ITableData {
-  caption: string;
-  columns: string[];
-  data: (string | number)[][];
+  name: string;
+  npm: number;
+  status: string;
+  informasi: string;
 }

@@ -19,10 +19,10 @@ import {
 export const description = "A pie chart with a label list"
 
 const chartData = [
-    { browser: "Regular", visitors: 275, fill: "var(--color-chrome)" },
-    { browser: "Ekstensi", visitors: 200, fill: "var(--color-safari)" },
-    { browser: "Pengulangan", visitors: 187, fill: "var(--color-firefox)" },
-    { browser: "Transfer", visitors: 173, fill: "var(--color-edge)" },
+    { browser: "Aktif", visitors: 275, fill: "var(--color-chrome)" },
+    { browser: "Cuti", visitors: 200, fill: "var(--color-safari)" },
+    { browser: "Tidak Aktif", visitors: 187, fill: "var(--color-firefox)" },
+    { browser: "Tidak Ada Keterangan", visitors: 173, fill: "var(--color-edge)" },
     { browser: "Lainnya", visitors: 90, fill: "var(--color-other)" },
 ]
 
@@ -57,7 +57,7 @@ function PieChart() {
         <div>
             <Card className="flex flex-col">
                 <CardHeader className="items-center pb-0">
-                    <CardTitle>Pie Chart - Label List</CardTitle>
+                    <CardTitle>Status Mahasiswa</CardTitle>
                     <CardDescription>January - June 2024</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 pb-0">
