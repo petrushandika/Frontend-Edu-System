@@ -15,7 +15,7 @@ function StudentTable() {
                 const formattedData: IStudentData[] = data.map((item: any) => ({
                     name: item['Nama Lengkap'],
                     npm: item.NPM,
-                    kelas: item.Kelas,
+                    class: item.class,
                     course: item['Mata Kuliah'].split(',').map((course: string) => course.trim()),
                 }));
                 setLecturers(formattedData);
@@ -29,7 +29,7 @@ function StudentTable() {
     const filteredData = lecturers.filter((item) =>
         (typeof item.name === 'string' && item.name.toLowerCase().includes(search.toLowerCase())) ||
         (typeof item.npm === 'string' && item.npm.toLowerCase().includes(search.toLowerCase())) ||
-        (typeof item.kelas === 'string' && item.kelas.toLowerCase().includes(search.toLowerCase())) ||
+        (typeof item.class === 'string' && item.class.toLowerCase().includes(search.toLowerCase())) ||
         item.course.some(course => course.toLowerCase().includes(search.toLowerCase()))
     );
 
@@ -75,7 +75,7 @@ function StudentTable() {
                         <tr>
                             <th className="border px-4 py-2">Nama Lengkap</th>
                             <th className="border px-4 py-2">NPM</th>
-                            <th className="border px-4 py-2">Kelas</th>
+                            <th className="border px-4 py-2">class</th>
                             <th className="border px-4 py-2">Mata Kuliah</th>
                         </tr>
                     </thead>
@@ -84,7 +84,7 @@ function StudentTable() {
                             <tr key={index}>
                                 <td className="border px-4 py-2">{item.name}</td>
                                 <td className="border px-4 py-2">{item.npm}</td>
-                                <td className="border px-4 py-2">{item.kelas}</td>
+                                <td className="border px-4 py-2">{item.class}</td>
                                 <td className="border px-4 py-2">
                                     {item.course.map((course, idx) => (
                                         <span
@@ -105,7 +105,7 @@ function StudentTable() {
                         <div key={index} className="border p-4 mb-2 rounded-md bg-white">
                             <p className="font-semibold text-lg">{item.name}</p>
                             <p><span className="font-semibold">NPM:</span> {item.npm}</p>
-                            <p><span className="font-semibold">Kelas:</span> {item.kelas}</p>
+                            <p><span className="font-semibold">class:</span> {item.class}</p>
                             <div>
                                 {item.course.map((course, idx) => (
                                     <span

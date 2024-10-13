@@ -1,16 +1,17 @@
 import { IoIosArrowForward } from "react-icons/io";
+import IScheduleCard from "@/types/IScheduleCard";
 
-function ScheduleCard({ title, description, imageUrl, code, instructor, time, day }: any) {
+function ScheduleCard({ title, description, imageUrl, code, instructor, time, day }: IScheduleCard) {
     return (
         <div className="flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out border rounded-md p-5 gap-5">
             <div className="w-full md:w-1/3 lg:w-1/4 flex items-center">
                 <img
                     src={imageUrl}
                     alt={title}
-                    className="rounded w-full object-cover"
+                    className="rounded object-cover w-full h-52 md:h-40 lg:h-48"
                 />
             </div>
-            <div className="flex flex-col gap-3 w-full md:w-2/3 lg:w-3/4">
+            <div className="flex flex-col gap-3 w-full md:w-2/3 lg:w-3/4 justify-center">
                 <h1 className="text-lg md:text-xl lg:text-2xl font-semibold">
                     {title}
                 </h1>

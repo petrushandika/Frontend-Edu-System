@@ -1,7 +1,7 @@
 export default interface IScheduleData {
-  hari: string;
-  mataKuliah: string;
-  waktu: string;
-  ruang: string;
-  dosen: string;
+  day: string;
+  course: string;
+  time: string;
+  class: string;
+  lecturer: string;
 }
