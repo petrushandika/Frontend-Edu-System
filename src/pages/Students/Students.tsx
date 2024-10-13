@@ -1,6 +1,10 @@
+import StudentTable from "./components/StudentTable"
+
 function Students() {
     return (
-        <div>Students</div>
+        <div>
+            <StudentTable />
+        </div>
     )
 }
 

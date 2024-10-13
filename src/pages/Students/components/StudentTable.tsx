@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import ILecturerData from '@/types/ILecturerData';
+import IStudentData from '@/types/IStudentData';
 
-function LecturerTable() {
-    const [lecturers, setLecturers] = useState<ILecturerData[]>([]);
+function StudentTable() {
+    const [lecturers, setLecturers] = useState<IStudentData[]>([]);
     const [search, setSearch] = useState('');
     const [pageSize, setPageSize] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
@@ -10,27 +10,27 @@ function LecturerTable() {
     useEffect(() => {
         async function fetchLecturers() {
             try {
-                const response = await fetch('/src/data/lecturers.json');
+                const response = await fetch('/src/data/students.json');
                 const data = await response.json();
-                const formattedData: ILecturerData[] = data.map((item: any) => ({
-                    name: item.Nama,
-                    course: item['Mata Kuliah'],
-                    email: item.Kontak.Email,
-                    whatsapp: item.Kontak.Whatsapp,
+                const formattedData: IStudentData[] = data.map((item: any) => ({
+                    name: item['Nama Lengkap'],
+                    npm: item.NPM,
+                    kelas: item.Kelas,
+                    course: item['Mata Kuliah'].split(',').map((course: string) => course.trim()),
                 }));
                 setLecturers(formattedData);
             } catch (error) {
-                console.error('Failed to fetch lecturers data:', error);
+                console.error('Failed to fetch student data:', error);
             }
         }
         fetchLecturers();
     }, []);
 
     const filteredData = lecturers.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase()) ||
-        item.course.toLowerCase().includes(search.toLowerCase()) ||
-        item.email.toLowerCase().includes(search.toLowerCase()) ||
-        item.whatsapp.includes(search)
+        (typeof item.name === 'string' && item.name.toLowerCase().includes(search.toLowerCase())) ||
+        (typeof item.npm === 'string' && item.npm.toLowerCase().includes(search.toLowerCase())) ||
+        (typeof item.kelas === 'string' && item.kelas.toLowerCase().includes(search.toLowerCase())) ||
+        item.course.some(course => course.toLowerCase().includes(search.toLowerCase()))
     );
 
     const paginatedData = pageSize === -1
@@ -42,6 +42,22 @@ function LecturerTable() {
             setCurrentPage(1);
         }
     }, [filteredData, pageSize]);
+
+    const getColorForCourse = (course: string): string => {
+        const courseColors: { [key: string]: string } = {
+            'Interaksi Manusia & Komputer': 'bg-blue-500',
+            'Jejaring Sosial & Konten Kreatif': 'bg-pink-500',
+            'Sistem Keamanan Tek. Informasi': 'bg-green-500',
+            'Konsep Data Mining': 'bg-yellow-500',
+            'Pemrograman Berbasis Web': 'bg-purple-500',
+            'Statistika': 'bg-orange-500',
+            'Bahasa Indonesia 2': 'bg-red-500',
+            'Metode Penelitian': 'bg-teal-500',
+            'Graf & Analisis Algoritma': 'bg-indigo-500',
+        };
+
+        return courseColors[course] || 'bg-gray-500';
+    };
 
     return (
         <div>
@@ -57,19 +73,28 @@ function LecturerTable() {
                 <table className="table-auto w-full border-collapse hidden lg:table">
                     <thead>
                         <tr>
-                            <th className="border px-4 py-2">Nama</th>
+                            <th className="border px-4 py-2">Nama Lengkap</th>
+                            <th className="border px-4 py-2">NPM</th>
+                            <th className="border px-4 py-2">Kelas</th>
                             <th className="border px-4 py-2">Mata Kuliah</th>
-                            <th className="border px-4 py-2">Email</th>
-                            <th className="border px-4 py-2">Whatsapp</th>
                         </tr>
                     </thead>
                     <tbody>
                         {paginatedData.map((item, index) => (
                             <tr key={index}>
                                 <td className="border px-4 py-2">{item.name}</td>
-                                <td className="border px-4 py-2">{item.course}</td>
-                                <td className="border px-4 py-2">{item.email}</td>
-                                <td className="border px-4 py-2">{item.whatsapp}</td>
+                                <td className="border px-4 py-2">{item.npm}</td>
+                                <td className="border px-4 py-2">{item.kelas}</td>
+                                <td className="border px-4 py-2">
+                                    {item.course.map((course, idx) => (
+                                        <span
+                                            key={idx}
+                                            className={`inline-block px-3 py-1 m-1 text-sm font-semibold text-white rounded-full ${getColorForCourse(course)}`}
+                                        >
+                                            {course}
+                                        </span>
+                                    ))}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -79,9 +104,18 @@ function LecturerTable() {
                     {paginatedData.map((item, index) => (
                         <div key={index} className="border p-4 mb-2 rounded-md bg-white">
                             <p className="font-semibold text-lg">{item.name}</p>
-                            <p><span className="font-semibold">Mata Kuliah:</span> {item.course}</p>
-                            <p><span className="font-semibold">Email:</span> {item.email}</p>
-                            <p><span className="font-semibold">Whatsapp:</span> {item.whatsapp}</p>
+                            <p><span className="font-semibold">NPM:</span> {item.npm}</p>
+                            <p><span className="font-semibold">Kelas:</span> {item.kelas}</p>
+                            <div>
+                                {item.course.map((course, idx) => (
+                                    <span
+                                        key={idx}
+                                        className={`inline-block px-3 py-1 m-1 text-sm font-semibold text-white rounded-full ${getColorForCourse(course)}`}
+                                    >
+                                        {course}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -125,4 +159,4 @@ function LecturerTable() {
     );
 };
 
-export default LecturerTable;
+export default StudentTable;

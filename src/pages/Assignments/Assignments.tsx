@@ -1,15 +1,15 @@
-import Final from "./components/Final"
-import Main from "./components/Main"
-import Upload from "./components/Upload"
+import Final from "./components/Final";
+import Main from "./components/Main";
+import Upload from "./components/Upload";
 
 function Assignments() {
     return (
-        <div className="flex gap-3" >
+        <div className="flex flex-col md:flex-row gap-3">
             <Main />
             <Final />
             <Upload />
-        </div >
-    )
+        </div>
+    );
 }
 
-export default Assignments
+export default Assignments;
