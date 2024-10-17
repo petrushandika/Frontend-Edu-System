@@ -53,7 +53,7 @@ function PieChart() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch("/src/data/status.json");
+                const response = await fetch("/public/status.json");
                 const jsonData: ChartData[] = await response.json();
 
                 const formattedData = jsonData

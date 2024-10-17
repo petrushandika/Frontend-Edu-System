@@ -8,7 +8,7 @@ function ScheduleList() {
     useEffect(() => {
         async function fetchSchedule() {
             try {
-                const response = await fetch('/src/data/schedule.json');
+                const response = await fetch('/public/schedule.json');
                 const data = await response.json();
 
                 const formattedData: IScheduleCard[] = data.map((item: any) => ({

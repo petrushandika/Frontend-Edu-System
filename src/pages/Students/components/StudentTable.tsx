@@ -10,7 +10,7 @@ function StudentTable() {
     useEffect(() => {
         async function fetchLecturers() {
             try {
-                const response = await fetch('/src/data/students.json');
+                const response = await fetch('/public/students.json');
                 const data = await response.json();
                 const formattedData: IStudentData[] = data.map((item: any) => ({
                     name: item['Nama Lengkap'],

@@ -17,7 +17,7 @@ function DashboardTable({ caption }: { caption: string }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("/src/data/students.json");
+                const response = await fetch("/public/students.json");
                 const result = await response.json();
 
                 const formattedData: ITableData[] = result.map((item: any) => ({
