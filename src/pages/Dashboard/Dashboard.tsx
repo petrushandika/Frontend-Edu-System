@@ -4,7 +4,7 @@ import Table from "./components/DashboardTable";
 
 function Dashboard() {
     return (
-        <div className="w-full bg-white rounded-lg my-2">
+        <div className="w-full bg-white rounded-lg">
             <div className="flex flex-col gap-5 md:flex-row">
                 <div className="w-full md:w-1/2">
                     <PieChart />
@@ -13,7 +13,7 @@ function Dashboard() {
                     <BarChart />
                 </div>
             </div>
-            <div className="mt-5">
+            <div className="my-5">
                 <Table caption="Daftar Mahasiswa" />
             </div>
         </div>

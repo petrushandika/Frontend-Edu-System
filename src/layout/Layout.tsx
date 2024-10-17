@@ -44,7 +44,7 @@ function Layout() {
                     <Navigation onLinkClick={handleLinkClick} />
                 </div>
 
-                <div className="w-full md:w-4/5 ml-auto h-full overflow-y-auto pt-4 px-8">
+                <div className="w-full md:w-4/5 ml-auto h-full overflow-y-auto py-5 px-8">
                     <Outlet />
                 </div>
             </div>

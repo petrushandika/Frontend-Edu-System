@@ -77,7 +77,7 @@ function LecturerTable() {
 
                 <div className="lg:hidden">
                     {paginatedData.map((item, index) => (
-                        <div key={index} className="border p-4 mb-2 rounded-md bg-white">
+                        <div key={index} className="border p-4 mb-2 rounded-lg bg-white">
                             <p className="font-semibold text-lg">{item.name}</p>
                             <p><span className="font-semibold">Mata Kuliah:</span> {item.course}</p>
                             <p><span className="font-semibold">Email:</span> {item.email}</p>

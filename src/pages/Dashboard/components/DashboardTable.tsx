@@ -37,13 +37,16 @@ function DashboardTable({ caption }: { caption: string }) {
     }, []);
 
     return (
-        <div className="max-h-[300px] overflow-y-auto relative">
+        <div className="max-h-[300px] overflow-y-auto relative border rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <UITable className="min-w-full">
                 <TableCaption>{caption}</TableCaption>
                 <TableHeader>
                     <TableRow className="bg-gray-200 sticky top-0 z-10">
                         {columns.map((column, index) => (
-                            <TableHead key={index}>
+                            <TableHead
+                                key={index}
+                                className="sticky top-0 bg-gray-200 z-10"
+                            >
                                 {column}
                             </TableHead>
                         ))}

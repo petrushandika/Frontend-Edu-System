@@ -2,7 +2,7 @@ import ScheduleList from "./components/ScheduleList"
 
 function Schedule() {
     return (
-        <div className="mb-5">
+        <div className="">
             <ScheduleList />
         </div>
     )

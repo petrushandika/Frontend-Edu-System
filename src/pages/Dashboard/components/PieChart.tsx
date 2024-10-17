@@ -1,6 +1,7 @@
-"use client"
-import { TrendingUp } from "lucide-react"
-import { LabelList, Pie, PieChart as RechartsPieChart } from "recharts"
+"use client";
+import { useEffect, useState } from "react";
+import { TrendingUp } from "lucide-react";
+import { LabelList, Pie, Cell, PieChart as RechartsPieChart } from "recharts";
 import {
     Card,
     CardContent,
@@ -8,53 +9,72 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
-    ChartConfig,
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
-export const description = "A pie chart with a label list"
+type StatusType = "Aktif" | "Transfer" | "Cuti" | "Non Aktif" | "Pindah Kuliah";
 
-const chartData = [
-    { browser: "Aktif", visitors: 275, fill: "var(--color-chrome)" },
-    { browser: "Cuti", visitors: 200, fill: "var(--color-safari)" },
-    { browser: "Tidak Aktif", visitors: 187, fill: "var(--color-firefox)" },
-    { browser: "Tidak Ada Keterangan", visitors: 173, fill: "var(--color-edge)" },
-    { browser: "Lainnya", visitors: 90, fill: "var(--color-other)" },
-]
+const chartConfig: Record<StatusType, { label: string; color: string }> = {
+    Aktif: {
+        label: "Aktif",
+        color: "#28a745",
+    },
+    Transfer: {
+        label: "Transfer",
+        color: "#ffc107",
+    },
+    Cuti: {
+        label: "Cuti",
+        color: "#dc3545",
+    },
+    "Non Aktif": {
+        label: "Non Aktif",
+        color: "#fd7e14",
+    },
+    "Pindah Kuliah": {
+        label: "Pindah Kuliah",
+        color: "#6c757d",
+    },
+};
 
-const chartConfig = {
-    visitors: {
-        label: "Visitors",
-    },
-    chrome: {
-        label: "Chrome",
-        color: "hsl(var(--chart-1))",
-    },
-    safari: {
-        label: "Safari",
-        color: "hsl(var(--chart-2))",
-    },
-    firefox: {
-        label: "Firefox",
-        color: "hsl(var(--chart-3))",
-    },
-    edge: {
-        label: "Edge",
-        color: "hsl(var(--chart-4))",
-    },
-    other: {
-        label: "Other",
-        color: "hsl(var(--chart-5))",
-    },
-} satisfies ChartConfig
+interface ChartData {
+    status: StatusType;
+    visitors: number;
+    fill: string;
+}
 
 function PieChart() {
+    const [data, setData] = useState<ChartData[]>([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch("/src/data/status.json");
+                const jsonData: ChartData[] = await response.json();
+
+                const formattedData = jsonData
+                    .filter((item): item is ChartData => item.status in chartConfig)
+                    .map((item) => ({
+                        status: item.status,
+                        visitors: item.visitors,
+                        fill: chartConfig[item.status].color,
+                    }));
+
+                setData(formattedData);
+            } catch (error) {
+                console.error("Error fetching the chart data:", error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
     return (
-        <div>
+        <div className="w-full max-w-lg mx-auto">
             <Card className="flex flex-col">
                 <CardHeader className="items-center pb-0">
                     <CardTitle>Status Mahasiswa</CardTitle>
@@ -69,14 +89,23 @@ function PieChart() {
                             <ChartTooltip
                                 content={<ChartTooltipContent nameKey="visitors" hideLabel />}
                             />
-                            <Pie data={chartData} dataKey="visitors">
+                            <Pie
+                                data={data}
+                                dataKey="visitors"
+                                isAnimationActive={true}
+                                outerRadius={100}
+                                labelLine={false}
+                            >
+                                {data.map((entry) => (
+                                    <Cell key={entry.status} fill={entry.fill} />
+                                ))}
                                 <LabelList
-                                    dataKey="browser"
+                                    dataKey="status"
                                     className="fill-background"
                                     stroke="none"
                                     fontSize={12}
                                     formatter={(value: keyof typeof chartConfig) =>
-                                        chartConfig[value]?.label
+                                        chartConfig[value as StatusType]?.label
                                     }
                                 />
                             </Pie>
@@ -93,7 +122,7 @@ function PieChart() {
                 </CardFooter>
             </Card>
         </div>
-    )
+    );
 }
 
-export default PieChart
+export default PieChart;

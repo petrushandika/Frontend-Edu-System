@@ -64,12 +64,12 @@ function StudentTable() {
             <input
                 type="text"
                 placeholder="Search..."
-                className="border border-gray-300 rounded-lg p-2 mb-4 w-full"
+                className="border border-gray-300 rounded-lg p-2 mb-4 w-full shadow-sm outline-none"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
 
-            <div className="overflow-auto max-h-[500px] lg:border border-gray-300 rounded-lg">
+            <div className="overflow-auto max-h-[500px] lg:border border-gray-300 rounded-lg shadow-sm">
                 <table className="table-auto w-full border-collapse hidden lg:table">
                     <thead>
                         <tr>

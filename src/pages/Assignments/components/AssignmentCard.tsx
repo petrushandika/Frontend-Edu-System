@@ -3,7 +3,7 @@ import { FaRegFolderOpen } from "react-icons/fa";
 function AssignmentCard({ icon: Icon = FaRegFolderOpen, text = "Upload Tugas", className = "", ...props }) {
     return (
         <div
-            className={`flex flex-col sm:flex-row md:flex-row shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out border rounded-md p-5 gap-5 w-full 
+            className={`flex flex-col sm:flex-row md:flex-row shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out border rounded-lg p-5 gap-5 w-full 
             max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl ${className}`}
             {...props}
         >

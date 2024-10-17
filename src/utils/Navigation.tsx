@@ -10,7 +10,7 @@ function Navigation({ onLinkClick }: any) {
     };
 
     const handleLinkClick = () => {
-        setDropdownOpen(false); // Close dropdown for sub-items
+        setDropdownOpen(false);
         onLinkClick();
     };
 
@@ -35,7 +35,7 @@ function Navigation({ onLinkClick }: any) {
 
                 <button
                     className="w-full text-left block p-2 text-sm font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                    onClick={toggleDropdown} // Toggle dropdown without closing
+                    onClick={toggleDropdown}
                 >
                     Mata Kuliah
                 </button>
@@ -45,7 +45,7 @@ function Navigation({ onLinkClick }: any) {
                         <Link
                             to="/subjects/interaksi-manusia-dan-komputer"
                             className="block p-2 text-xs font-normal text-gray-700 hover:bg-gray-200 rounded-md"
-                            onClick={handleLinkClick} // Close dropdown and execute onLinkClick
+                            onClick={handleLinkClick}
                         >
                             • Interaksi Manusia & Komputer
                         </Link>

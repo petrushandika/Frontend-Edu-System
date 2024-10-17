@@ -15,6 +15,14 @@ import Main from "./pages/Assignments/components/Main";
 import Final from "./pages/Assignments/components/Final";
 import Upload from "./pages/Assignments/components/Upload";
 import Layout from "./layout/Layout";
+import HumanComputerInteraction from "./pages/Subjects/components/HumanComputerInteraction";
+import SocialNetworkingAndCreativeContent from "./pages/Subjects/components/SocialNetworkingAndCreativeContent";
+import InformationTechnologySecuritySystems from "./pages/Subjects/components/InformationTechnologySecuritySystems";
+import DataMiningConcepts from "./pages/Subjects/components/DataMiningConcepts";
+import WebProgramming from "./pages/Subjects/components/WebProgramming";
+import Statistics from "./pages/Subjects/components/Statistics";
+import IndonesianLanguage from "./pages/Subjects/components/IndonesianLanguage";
+import ResearchMethods from "./pages/Subjects/components/ResearchMethods";
 
 function App() {
   return (
@@ -24,7 +32,15 @@ function App() {
 
         <Route path="schedule" element={<Schedule />} />
         <Route path="subjects" element={<Subjects />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<Subjects />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<HumanComputerInteraction />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<SocialNetworkingAndCreativeContent />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<InformationTechnologySecuritySystems />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<DataMiningConcepts />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<WebProgramming />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<Statistics />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<IndonesianLanguage />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<ResearchMethods />} />
+        <Route path="subjects/interaksi-manusia-dan-komputer" element={<HumanComputerInteraction />} />
         <Route path="lecturers" element={<Lecturers />} />
 
         <Route path="students" element={<Students />}>
