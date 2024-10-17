@@ -16,16 +16,12 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart";
 
-type StatusType = "Aktif" | "Transfer" | "Cuti" | "Non Aktif" | "Pindah Kuliah";
+type StatusType = "Aktif" | "Cuti" | "Non Aktif" | "Pindah Kuliah" | "Lainnya";
 
 const chartConfig: Record<StatusType, { label: string; color: string }> = {
     Aktif: {
         label: "Aktif",
         color: "#28a745",
-    },
-    Transfer: {
-        label: "Transfer",
-        color: "#ffc107",
     },
     Cuti: {
         label: "Cuti",
@@ -37,6 +33,10 @@ const chartConfig: Record<StatusType, { label: string; color: string }> = {
     },
     "Pindah Kuliah": {
         label: "Pindah Kuliah",
+        color: "#ffc107",
+    },
+    Lainnya: {
+        label: "Lainnya",
         color: "#6c757d",
     },
 };
@@ -53,7 +53,7 @@ function PieChart() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch("/public/status.json");
+                const response = await fetch("/src/data/status.json");
                 const jsonData: ChartData[] = await response.json();
 
                 const formattedData = jsonData

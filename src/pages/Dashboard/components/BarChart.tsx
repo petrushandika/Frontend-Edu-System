@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import { TrendingUp } from "lucide-react";
 import { Bar, BarChart as RechartsBarChart, CartesianGrid, Rectangle, XAxis } from "recharts";
 import {
@@ -10,59 +11,80 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import {
-    ChartConfig,
     ChartContainer,
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export const description = "A bar chart with an active bar";
+type ClassType = "Regular" | "Ekstensi" | "Pengulangan" | "Transfer" | "Lainnya";
 
-const chartData = [
-    { browser: "Regular", visitors: 187, fill: "var(--color-chrome)" },
-    { browser: "Ekstensi", visitors: 200, fill: "var(--color-safari)" },
-    { browser: "Pengulangan", visitors: 275, fill: "var(--color-firefox)" },
-    { browser: "Transfer", visitors: 173, fill: "var(--color-edge)" },
-    { browser: "Lainnya", visitors: 90, fill: "var(--color-other)" },
-];
+const chartConfig: Record<ClassType, { label: string; color: string }> = {
+    Regular: {
+        label: "Regular",
+        color: "#28a745",
+    },
+    Ekstensi: {
+        label: "Ekstensi",
+        color: "#fd7e14",
+    },
+    Pengulangan: {
+        label: "Pengulangan",
+        color: "#ffc107",
+    },
+    Transfer: {
+        label: "Transfer",
+        color: "#dc3545",
+    },
+    Lainnya: {
+        label: "Lainnya",
+        color: "#6c757d",
+    },
+};
 
-const chartConfig = {
-    visitors: {
-        label: "Visitors",
-    },
-    chrome: {
-        label: "Chrome",
-        color: "hsl(var(--chart-1))",
-    },
-    safari: {
-        label: "Safari",
-        color: "hsl(var(--chart-2))",
-    },
-    firefox: {
-        label: "Firefox",
-        color: "hsl(var(--chart-3))",
-    },
-    edge: {
-        label: "Edge",
-        color: "hsl(var(--chart-4))",
-    },
-    other: {
-        label: "Other",
-        color: "hsl(var(--chart-5))",
-    },
-} satisfies ChartConfig;
+interface ChartData {
+    browser: ClassType;
+    visitors: number;
+}
 
 function BarChart() {
+    const [data, setData] = useState<ChartData[]>([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch("/src/data/class.json");
+                const jsonData: ChartData[] = await response.json();
+
+                const formattedData = jsonData
+                    .filter((item): item is ChartData => item.browser in chartConfig)
+                    .map((item) => ({
+                        browser: item.browser,
+                        visitors: item.visitors,
+                        fill: chartConfig[item.browser].color,
+                    }));
+
+                setData(formattedData);
+            } catch (error) {
+                console.error("Error fetching the chart data:", error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
     return (
-        <div>
+        <div className="w-full max-w-lg mx-auto">
             <Card className="flex flex-col">
                 <CardHeader className="items-center pb-0">
                     <CardTitle>Kelas Mahasiswa</CardTitle>
                     <CardDescription>January - June 2024</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 pb-0">
-                    <ChartContainer config={chartConfig} className="w-full h-full max-h-[300px] aspect-square mx-auto">
-                        <RechartsBarChart data={chartData} width={300} height={300}>
+                    <ChartContainer
+                        config={chartConfig}
+                        className="w-full h-full max-h-[300px] aspect-square mx-auto"
+                    >
+                        <RechartsBarChart data={data} width={300} height={300}>
                             <CartesianGrid vertical={false} />
                             <XAxis
                                 dataKey="browser"
@@ -70,7 +92,7 @@ function BarChart() {
                                 tickMargin={10}
                                 axisLine={false}
                                 tickFormatter={(value) =>
-                                    chartConfig[value as keyof typeof chartConfig]?.label
+                                    chartConfig[value as ClassType]?.label
                                 }
                             />
                             <ChartTooltip
@@ -79,15 +101,17 @@ function BarChart() {
                             />
                             <Bar
                                 dataKey="visitors"
-                                fill="var(--color-bar)"
                                 radius={[8, 8, 0, 0]}
                                 shape={({ ...props }) => {
-                                    const { payload, fill } = props;
-                                    const isActive = payload.browser === "firefox";
+                                    const { payload } = props;
+                                    const browser = payload.browser as ClassType;
+                                    const fill = chartConfig[browser].color;
+
+                                    const isActive = browser === "Regular";
                                     return (
                                         <Rectangle
                                             {...props}
-                                            fill={isActive ? fill : "var(--color-bar)"}
+                                            fill={fill}
                                             fillOpacity={isActive ? 0.8 : 1}
                                             stroke={isActive ? fill : undefined}
                                             strokeDasharray={isActive ? 4 : undefined}

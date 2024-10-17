@@ -23,6 +23,7 @@ import WebProgramming from "./pages/Subjects/components/WebProgramming";
 import Statistics from "./pages/Subjects/components/Statistics";
 import IndonesianLanguage from "./pages/Subjects/components/IndonesianLanguage";
 import ResearchMethods from "./pages/Subjects/components/ResearchMethods";
+import GraphAndAlgorithmAnalysis from "./pages/Subjects/components/GraphAndAlgorithmAnalysis";
 
 function App() {
   return (
@@ -33,14 +34,14 @@ function App() {
         <Route path="schedule" element={<Schedule />} />
         <Route path="subjects" element={<Subjects />} />
         <Route path="subjects/interaksi-manusia-dan-komputer" element={<HumanComputerInteraction />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<SocialNetworkingAndCreativeContent />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<InformationTechnologySecuritySystems />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<DataMiningConcepts />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<WebProgramming />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<Statistics />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<IndonesianLanguage />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<ResearchMethods />} />
-        <Route path="subjects/interaksi-manusia-dan-komputer" element={<HumanComputerInteraction />} />
+        <Route path="subjects/jejaring-sosial-dan-konten-kreatif" element={<SocialNetworkingAndCreativeContent />} />
+        <Route path="subjects/sistem-keamanan-teknologi-informasi" element={<InformationTechnologySecuritySystems />} />
+        <Route path="subjects/konsep-data-mining" element={<DataMiningConcepts />} />
+        <Route path="subjects/pemrograman-berbasis-web" element={<WebProgramming />} />
+        <Route path="subjects/statistika" element={<Statistics />} />
+        <Route path="subjects/bahasa-indonesia" element={<IndonesianLanguage />} />
+        <Route path="subjects/metode-penelitian" element={<ResearchMethods />} />
+        <Route path="subjects/graf-dan-analisis-algoritma" element={<GraphAndAlgorithmAnalysis />} />
         <Route path="lecturers" element={<Lecturers />} />
 
         <Route path="students" element={<Students />}>

@@ -1,0 +1,7 @@
+[
+  { "status": "Aktif", "visitors": 15 },
+  { "status": "Cuti", "visitors": 3 },
+  { "status": "Non Aktif", "visitors": 5 },
+  { "status": "Pindah Kuliah", "visitors": 2 },
+  { "status": "Lainnya", "visitors": 1 }
+]

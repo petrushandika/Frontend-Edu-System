@@ -1,7 +1,0 @@
-[
-  { "status": "Aktif", "visitors": 100 },
-  { "status": "Transfer", "visitors": 50 },
-  { "status": "Cuti", "visitors": 25 },
-  { "status": "Non Aktif", "visitors": 10 },
-  { "status": "Pindah Kuliah", "visitors": 5 }
-]
