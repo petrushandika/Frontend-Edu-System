@@ -8,7 +8,7 @@ function ScheduleCard({ course, description, imageUrl, class: classProp, instruc
                 <img
                     src={imageUrl}
                     alt={course}
-                    className="rounded object-cover w-full h-52 md:h-40 lg:h-48"
+                    className="rounded object-contain w-full h-52 md:h-40 lg:h-48"
                 />
             </div>
             <div className="flex flex-col gap-3 w-full md:w-2/3 lg:w-3/4 justify-center">

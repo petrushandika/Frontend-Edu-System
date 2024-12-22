@@ -6,6 +6,7 @@ function StudentTable() {
     const [search, setSearch] = useState('');
     const [pageSize, setPageSize] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
+    const [expandedCourses, setExpandedCourses] = useState<Set<number>>(new Set());
 
     useEffect(() => {
         async function fetchLecturers() {
@@ -59,6 +60,16 @@ function StudentTable() {
         return courseColors[course] || 'bg-gray-500';
     };
 
+    const toggleExpanded = (index: number) => {
+        const newExpandedCourses = new Set(expandedCourses);
+        if (newExpandedCourses.has(index)) {
+            newExpandedCourses.delete(index);
+        } else {
+            newExpandedCourses.add(index);
+        }
+        setExpandedCourses(newExpandedCourses);
+    };
+
     return (
         <div>
             <input
@@ -107,14 +118,43 @@ function StudentTable() {
                             <p><span className="font-semibold">NPM:</span> {item.npm}</p>
                             <p><span className="font-semibold">Kelas:</span> {item.class}</p>
                             <div>
-                                {item.course.map((course, idx) => (
+                                {item.course.slice(0, 2).map((course, idx) => (
                                     <span
                                         key={idx}
-                                        className={`inline-block px-3 py-1 m-1 text-sm font-semibold text-white rounded-full ${getColorForCourse(course)}`}
+                                        className={`inline-block px-2 py-1 m-1 text-sm font-semibold text-white rounded-full ${getColorForCourse(course)}`}
                                     >
                                         {course}
                                     </span>
                                 ))}
+                                {item.course.length > 3 && (
+                                    <>
+                                        {expandedCourses.has(index) ? (
+                                            <>
+                                                {item.course.slice(3).map((course, idx) => (
+                                                    <span
+                                                        key={idx + 3}
+                                                        className={`inline-block px-3 py-1 m-1 text-sm font-semibold text-white rounded-full ${getColorForCourse(course)}`}
+                                                    >
+                                                        {course}
+                                                    </span>
+                                                ))}
+                                                <button
+                                                    onClick={() => toggleExpanded(index)}
+                                                    className="text-blue-500 text-sm"
+                                                >
+                                                    See Less
+                                                </button>
+                                            </>
+                                        ) : (
+                                            <button
+                                                onClick={() => toggleExpanded(index)}
+                                                className="text-blue-500 text-sm"
+                                            >
+                                                See Details
+                                            </button>
+                                        )}
+                                    </>
+                                )}
                             </div>
                         </div>
                     ))}
